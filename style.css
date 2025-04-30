@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.sidebar{
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px 0 30px;
+    
+}
+.main{
+    width: 503px;
+    padding-left: 29px;
+    border-left: 1px solid #e5e7eb;
+}
+
+.title-sidebar{
+    margin-top: 28px;
+    margin-left: 0px;
+    font-size: 27px;
+}
+
+.select-loc{
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50;
+    
+}
+
+.select-dur{
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    
+}
+
+#duration{
+    width: 340px;
+    height: 51px;
+    border-radius: 4px;
+}
+
+#location{
+    width: 340px;
+    height: 51px;
+    border-radius: 4px;
+}
+
+
+.title-main{
+    margin-top: 36px;
+    font-size: 21.5px;
+}
+
+.calendar-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#monthYear{
+    margin-left: 8px;
+    margin-top: 2.5px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.calendar-buttons{
+    display: flex;
+    flex-direction: row;
+    margin-right: 95px;
+    gap: 10px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.month-nav{
+    all: unset;
+    cursor: pointer;
+}
+
+.week{
+    width: 410px;
+  margin-left: 20.25px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+#calendar {
+    width: 410px;
+    margin-left: 20.25px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 colunas para os dias da semana */
+    row-gap: 40px;
+}
+  
+.day,
+.noday{
+    height: 23.24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 14px;
+    font-weight: 400;
+    color: #7d7d7d;
+}
+
+

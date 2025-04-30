@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2 class="title-sidebar">Book a Court</h2>
+
+      <div class="select-loc">
+        <label for="location">Location</label>
+        <select id="location">
+          <option>Brazil</option>
+          <option>United States</option>
+          <option>Singapore</option>
+        </select>
+      </div>
+      
+
+      <div class="select-dur">
+        <label for="duration">Duration</label>
+        <select id="duration">
+          <option value="30">30 min</option>
+          <option value="60">60 min</option>
+        </select>
+      </div>
+      
+    </div>
+
+    <div class="main">
+      <h3 class="title-main">Pick a date and time</h3>
+      <div class="calendar-nav">
+        
+        <span id="monthYear"></span>
+        <div class="calendar-buttons">
+          <button id="prevMonth" class="month-nav" onclick="prevMonth()" >&lt;</button>
+          <button id="nextMonth" class="month-nav" onclick="nextMonth()" >&gt;</button>  
+        </div>
+      </div>
+      <section class="week">
+        <p class="weeDay">Su</p>
+        <p class="weeDay">Mo</p>
+        <p class="weeDay">Tu</p>
+        <p class="weeDay">We</p>
+        <p class="weeDay">Th</p>
+        <p class="weeDay">Fr</p>
+        <p class="weeDay">Sa</p>
+      </section>
+      <div id="calendar"></div>
+      
+    </div>
+    <div id="session-info"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
