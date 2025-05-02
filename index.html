@@ -33,27 +33,34 @@
 
     <div class="main">
       <h3 class="title-main">Pick a date and time</h3>
-      <div class="calendar-nav">
-        
-        <span id="monthYear"></span>
-        <div class="calendar-buttons">
-          <button id="prevMonth" class="month-nav" onclick="prevMonth()" >&lt;</button>
-          <button id="nextMonth" class="month-nav" onclick="nextMonth()" >&gt;</button>  
-        </div>
-      </div>
-      <section class="week">
-        <p class="weeDay">Su</p>
-        <p class="weeDay">Mo</p>
-        <p class="weeDay">Tu</p>
-        <p class="weeDay">We</p>
-        <p class="weeDay">Th</p>
-        <p class="weeDay">Fr</p>
-        <p class="weeDay">Sa</p>
-      </section>
-      <div id="calendar"></div>
+      <div>
+
       
+        <div class="calendar-nav">
+          
+          <span id="monthYear"></span>
+          <div class="calendar-buttons">
+            <button id="prevMonth" class="month-nav" onclick="prevMonth()" >&lt;</button>
+            <button id="nextMonth" class="month-nav" onclick="nextMonth()" >&gt;</button>  
+          </div>
+        </div>
+        <section class="week">
+          <p class="weeDay">Su</p>
+          <p class="weeDay">Mo</p>
+          <p class="weeDay">Tu</p>
+          <p class="weeDay">We</p>
+          <p class="weeDay">Th</p>
+          <p class="weeDay">Fr</p>
+          <p class="weeDay">Sa</p>
+        </section>
+        <div id="calendar"></div>
+      </div>
+      <div id="session-info">
+        <span id="day-details"></span>
+        <div class="meeting-time"></div>
+      </div> 
     </div>
-    <div id="session-info"></div>
+    
   </div>
 
   <script src="script.js"></script>

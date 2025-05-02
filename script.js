@@ -1,3 +1,28 @@
+//Classe de Reuniões
+class Meet{
+  
+  constructor(duration, time){
+    this.duration = duration;
+    this.time = time;
+  }
+}
+
+//Classe do dia
+class Day{
+
+  constructor(date){
+    this.meetings = [];
+    this.dayName = date.getDay();
+    this.day = date.getDate()
+    this.month = date.getMonth();
+    this.year = date.getFullYear();
+  }
+
+  addMeeting(meeting){
+    this.meetings.push(meeting);
+  }
+}
+
 const calendar = document.getElementById('calendar');
 const monthYear = document.getElementById('monthYear');
 const sessionInfo = document.getElementById('session-info');
@@ -7,6 +32,10 @@ const durationSelect = document.getElementById('duration');
 let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
 let currentDay = new Date().getDay();
+
+let days = [];
+
+
 
 function compareDay(d,m,y){
   const today = new Date();
@@ -35,6 +64,9 @@ function renderCalendar(month, year) {
   
     for (let day = 1; day <= daysInMonth; day++) {
       const date = new Date(year, month, day);
+
+      days.push(new Day(date));
+
       const dateStr = date.toISOString().split('T')[0];
       const dayDiv = document.createElement('div');
       dayDiv.classList.add('day');
@@ -54,13 +86,13 @@ function renderCalendar(month, year) {
       }
       
   
-  
+  /*
       dayDiv.addEventListener('click', () => {
         document.querySelectorAll('.day').forEach(d => d.classList.remove('selected'));
         dayDiv.classList.add('selected');
         showSessionInfo(dateStr);
       });
-  
+  */
       calendar.appendChild(dayDiv);
     }
 }
@@ -95,7 +127,10 @@ function setBooking(month, year){
   for(let i = 0; i < 2; i++){
 
     const rand = Math.floor(Math.random() * daysInMonth) + 1;
-    console.log(rand);
+
+    //adiciona reunião ao dia salvo na lista
+    days[rand+1].addMeeting(new Meet(60, '8:00'));
+
     dias.forEach(dia => {
       const p = dia.querySelector('p');
       if(parseInt(p.textContent) === rand){
@@ -110,8 +145,12 @@ function setBooking(month, year){
 renderCalendar(currentMonth, currentYear);
 setBooking(currentMonth, currentYear);
 
+
 //gerando orientação de clicks
 let divs = document.querySelectorAll('.day');
+
+//função para mostrar agenda
+
 
 divs.forEach(div =>{
     div.onclick = () => {
