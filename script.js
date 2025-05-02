@@ -40,15 +40,16 @@ function renderCalendar(month, year) {
       dayDiv.classList.add('day');
 
       const p = document.createElement('p');
+      p.classList.add('numDay');
       p.textContent = day;
       dayDiv.appendChild(p);
 
       //adiciona bolinha no dia de hoje
       
       if(compareDay(day, month, year)){
-        const toDay = document.createElement('img');
+        console.log("Hoje é: ", day, month, year);
+        const toDay = document.createElement('div');
         toDay.classList.add('dayDot');
-        toDay.src = "./assets/bolinha.svg";
         dayDiv.appendChild(toDay);
       }
       
@@ -86,6 +87,35 @@ function prevMonth(){
   }
   renderCalendar(currentMonth, currentYear);
 }
+
+//Função para gerar agendamentos aleatórios
+function setBooking(month, year){
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const dias = document.querySelectorAll('.day')
+  for(let i = 0; i < 2; i++){
+
+    const rand = Math.floor(Math.random() * daysInMonth) + 1;
+    console.log(rand);
+    dias.forEach(dia => {
+      const p = dia.querySelector('p');
+      if(parseInt(p.textContent) === rand){
+        dia.classList.add('booked');
+      }
+    })
+
+  }
+}
   
 
 renderCalendar(currentMonth, currentYear);
+setBooking(currentMonth, currentYear);
+
+//gerando orientação de clicks
+let divs = document.querySelectorAll('.day');
+
+divs.forEach(div =>{
+    div.onclick = () => {
+      divs.forEach(d => d.classList.remove('clicked'));
+      div.classList.add('clicked');
+    }
+})
